@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Smooth transitions for drag effects */
+.task-card {
+  transition: all 0.2s ease;
+}
+
+/* Drag preview styling */
+.drag-preview {
+  opacity: 0.7;
+  transform: rotate(3deg);
+}
+
+/* Drop zone highlighting */
+.drop-zone-active {
+  background-color: rgba(59, 130, 246, 0.1);
+  border: 2px dashed #3b82f6;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  .task-card {
+    min-height: 60px;
+  }
+}

@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "fdc30074-96bb-441f-91f7-581d966d194a",
+		"name": "Task Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45522597",
+		"_collection_link": "https://srikanthkamalla-3165932.postman.co/workspace/Srikanth-Kamalla's-Workspace~bab9ef2d-2e16-4376-80f5-ba6388644f04/collection/45522597-fdc30074-96bb-441f-91f7-581d966d194a?action=share&source=collection_link&creator=45522597"
+	},
+	"item": [
+		{
+			"name": "Get-tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LH-BE}}/tasks",
+					"host": [
+						"{{LH-BE}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"To Do\",\r\n    \"priority\": \"Urgent\",\r\n    \"title\": \"title2\",\r\n    \"description\": \"description2\",\r\n    \"dueDate\":\"2025-12-31T00:00:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LH-BE}}/tasks",
+					"host": [
+						"{{LH-BE}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Done\",\r\n    \"priority\": \"Urgent\",\r\n    \"title\": \"title2.1\",\r\n    \"description\": \"description2.1\",\r\n    \"dueDate\":\"2025-12-31T00:00:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LH-BE}}/tasks/69342bf78c71616963183e4a",
+					"host": [
+						"{{LH-BE}}"
+					],
+					"path": [
+						"tasks",
+						"69342bf78c71616963183e4a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task DND",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"To Do\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LH-BE}}/tasks/69342bf78c71616963183e4a/status",
+					"host": [
+						"{{LH-BE}}"
+					],
+					"path": [
+						"tasks",
+						"69342bf78c71616963183e4a",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{LH-BE}}/tasks/69342bf78c71616963183e4a",
+					"host": [
+						"{{LH-BE}}"
+					],
+					"path": [
+						"tasks",
+						"69342bf78c71616963183e4a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parse-text",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Hey, remind me to refactor the authentication code later today.\r\nIt’s not urgent, but I don’t want to forget it\r\n\"\r\n}"
+				},
+				"url": {
+					"raw": "{{LH-BE}}/tasks/parse-task",
+					"host": [
+						"{{LH-BE}}"
+					],
+					"path": [
+						"tasks",
+						"parse-task"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "LH-BE",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
